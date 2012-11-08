@@ -7,6 +7,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
+gem 'magic_grid'
 gem "puma", ">= 1.6.3"
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem 'capybara'

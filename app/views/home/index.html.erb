@@ -5,6 +5,5 @@
     <%= skill.users.in_domain(current_user.domain).count %>/<%= skill.users.in_domain(current_user.domain).count %>
   </span>
 <% end %>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
-<% end %>
+
+<%= magic_grid(@users, [:name, :skills_list], class: 'table') %>
