@@ -1,4 +1,19 @@
-RECIPES
+On Deck
+========================
+
+This application was generated with the rails_apps_composer gem:
+https://github.com/RailsApps/rails_apps_composer
+provided by the RailsApps Project:
+http://railsapps.github.com/
+
+________________________
+
+Recipes:
 ["controllers", "core", "email", "extras", "frontend", "gems", "git", "init", "models", "prelaunch", "railsapps", "readme", "routes", "saas", "setup", "testing", "views"]
-PREFERENCES
-{:git=>true, :railsapps=>"none", :dev_webserver=>"puma", :prod_webserver=>"puma", :database=>"sqlite", :templates=>"erb", :unit_test=>"rspec", :integration=>"none", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"omniauth", :omniauth_provider=>"google_oauth2", :authorization=>"none", :form_builder=>"none", :starter_app=>"users_app"}
+
+Preferences:
+{:git=>true, :railsapps=>"none", :dev_webserver=>"puma", :prod_webserver=>"puma", :database=>"sqlite", :templates=>"erb", :unit_test=>"rspec", :integration=>"none", :fixtures=>"factory_girl", :frontend=>"bootstrap", :bootstrap=>"sass", :email=>"none", :authentication=>"omniauth", :omniauth_provider=>"google_oauth2", :authorization=>"none", :form_builder=>"none", :starter_app=>"users_app", :quiet_assets=>true, :ban_spiders=>true, :jsruntime=>false, :github=>true}
+
+________________________
+
+License
