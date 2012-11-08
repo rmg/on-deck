@@ -13,12 +13,27 @@ class UsersController < ApplicationController
   
   def update
     @user = User.find(params[:id])
-    @user.skills_list = params[:user][:skills_list]
-    if @user.save
-      redirect_to @user
-    else
-      render :edit
+    updated = []
+    if params[:user][:skills_list]
+      updated << "Skills list"
+      @user.skills_list = params[:user][:skills_list]
     end
+    if params[:user][:present_until]
+      updated << "Status"
+      @user.present_until = params[:user][:present_until]
+    end
+    if params[:user][:away_until]
+      updated << "Status"
+      @user.away_until = params[:user][:away_until]
+    end
+
+    if @user.save
+      flash[:notice] = updated.uniq.join(" and ") + ' updated'
+    else
+      flash[:error] = updated.uniq.join(" and ") + ' not updated'
+    end
+
+    redirect_to root_path
   end
 
 

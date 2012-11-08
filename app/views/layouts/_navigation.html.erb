@@ -13,3 +13,7 @@
     </li>
   <% end %>
 </ul>
+
+<% if user_signed_in? %>
+  <%= status_update_buttons(current_user) %>
+<% end %>
