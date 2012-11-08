@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   def status
     if present?
       if away?
-        :lunch
+        :break
       else
         :office
       end
