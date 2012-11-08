@@ -1,5 +1,8 @@
 <%= link_to "On Deck", root_path, :class => 'brand' %>
 <ul class="nav">
+  <li>
+    <%= link_to "GitHub", 'https://github.com/rmg/on-deck' %>
+  </li>
   <% if user_signed_in? %>
     <li>
       <%= link_to current_user do %>
