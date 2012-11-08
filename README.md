@@ -1,4 +1,5 @@
 ## Experts MVP
+&copy; 2012 Ryan Graham. All rights reserved.
 
 This is what I wanted to do after a first wild stab, and then a proper MVP.
 
