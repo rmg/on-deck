@@ -1,13 +1,21 @@
-<h2>Skills On Deck<h2>
-<% @skills.each do |skill| %>
-  <%= skill_badge(skill, current_user.domain) %>
+<h2>Skills On Deck</h2>
+<% if user_signed_in? %>
+  <% @skills.each do |skill| %>
+    <%= skill_badge(skill, current_user.domain) %>
+  <% end %>
+<% else %>
+  You must be signed in to see this information.
 <% end %>
 
 <h2>Staff On Deck</h2>
-<%= magic_grid(@users,
-               [
-                :name,
-                {col: :status, to_s: ->(u) { status_badge(u) } },
-                :skills_list
-               ],
-               class: 'table') %>
+<% if user_signed_in? %>
+  <%= magic_grid(@users,
+                 [
+                  :name,
+                  {col: :status, to_s: ->(u) { status_badge(u) } },
+                  :skills_list
+                 ],
+                 class: 'table') %>
+<% else %>
+  You must be signed in to see staff status information.
+<% end %>
