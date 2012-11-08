@@ -2,7 +2,12 @@
 <ul class="nav">
   <% if user_signed_in? %>
     <li>
-      <%= link_to current_user.name, current_user %>
+      <%= link_to current_user do %>
+        <%= current_user.name %> (<%= current_user.status.to_s.titleize %>)
+      <% end %>
+    </li>
+    <li>
+      <%= link_to "Edit my Skills", edit_user_path(current_user) %>
     </li>
     <li>
       <%= link_to 'Logout', signout_path %>        
@@ -13,7 +18,3 @@
     </li>
   <% end %>
 </ul>
-
-<% if user_signed_in? %>
-  <%= status_update_buttons(current_user) %>
-<% end %>

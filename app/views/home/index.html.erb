@@ -1,13 +1,23 @@
-<h2>Skills On Deck</h2>
 <% if user_signed_in? %>
-  <% @skills.each do |skill| %>
-    <%= skill_badge(skill, current_user.domain) %>
-  <% end %>
+  <div class="pull-right">
+    <% status_update_buttons(current_user).each do |btn| %>
+      <%= btn %>
+    <% end %>
+  </div>
+<% end %>
+
+<h2>Skills On Deck <%= "for #{current_user.domain}" if user_signed_in? %></h2>
+<% if user_signed_in? %>
+  <div class="well">
+    <% @skills.each do |skill| %>
+      <%= skill_badge(skill, current_user.domain) %>
+    <% end %>
+  </div>
 <% else %>
   You must be signed in to see this information.
 <% end %>
 
-<h2>Staff On Deck</h2>
+<h2>Staff On Deck <%= "for #{current_user.domain}" if user_signed_in? %></h2>
 <% if user_signed_in? %>
   <%= magic_grid(@users,
                  [
