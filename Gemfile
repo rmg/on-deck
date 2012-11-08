@@ -36,3 +36,11 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "puma", ">= 1.6.3"
+gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
+gem "email_spec", ">= 1.2.1", :group => :test
+gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
+gem "bootstrap-sass", ">= 2.1.0.1"
+gem "omniauth", ">= 1.1.1"
+gem "omniauth-google-oauth2"
