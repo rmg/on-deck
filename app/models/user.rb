@@ -1,8 +1,29 @@
 class User < ActiveRecord::Base
-  attr_accessible :provider, :uid, :name, :email, :skills, :domain
+  attr_accessible :provider, :uid, :name, :email, :skills, :domain,
+                  :present_until, :away_until
   has_and_belongs_to_many :skills
 
   scope :in_domain, ->(domain) { where domain: domain }
+
+  def present?
+    present_until && present_until > Time.now
+  end
+
+  def away?
+    away_until && away_until > Time.now
+  end
+
+  def status
+    if present?
+      if away?
+        :lunch
+      else
+        :office
+      end
+    else
+      :home
+    end
+  end
 
   def skills_list
     skills.map(&:name).join(', ')
