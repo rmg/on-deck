@@ -1,4 +1,10 @@
 <h3>Home</h3>
+<% @skills.each do |skill| %>
+  <span class='badge badge-<%= cycle 'info', 'important', 'warning', 'default', 'success' %>'>
+    <%= skill.name %>
+    <%= skill.users.in_domain(current_user.domain).count %>/<%= skill.users.in_domain(current_user.domain).count %>
+  </span>
+<% end %>
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
 <% end %>
