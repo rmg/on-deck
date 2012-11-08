@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :user do
-    provider "twitter"
+    provider "google_oauth2"
     uid "12345"
     name "Bob"
   end
