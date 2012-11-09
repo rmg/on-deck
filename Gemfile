@@ -18,4 +18,3 @@ gem "bootstrap-sass", ">= 2.1.0.1"
 gem "omniauth", ">= 1.1.1"
 gem "omniauth-google-oauth2"
 gem "quiet_assets", ">= 1.0.1", group: :development
-gem "hub", ">= 1.10.2", require: nil, group: [:development]
