@@ -14,17 +14,19 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     updated = []
-    if params[:user][:skills_list]
+    user_params = params[:user] || {}
+    user_params = user_params.merge(params['hidden-user'] || {})
+    if user_params[:skills_list]
       updated << "Skills list"
-      @user.skills_list = params[:user][:skills_list]
+      @user.skills_list = user_params[:skills_list]
     end
-    if params[:user][:present_until]
+    if user_params[:present_until]
       updated << "Status"
-      @user.present_until = params[:user][:present_until]
+      @user.present_until = user_params[:present_until]
     end
-    if params[:user][:away_until]
+    if user_params[:away_until]
       updated << "Status"
-      @user.away_until = params[:user][:away_until]
+      @user.away_until = user_params[:away_until]
     end
 
     if @user.save
