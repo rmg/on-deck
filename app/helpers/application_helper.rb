@@ -1,6 +1,6 @@
 module ApplicationHelper
   def skill_badge(skill, domain)
-    all = skill.users.in_domain(domain)
+    all = skill.users.to_a.select {|u| u.domain == domain }
     present = all.select {|u| u.status == :office }
     present_count = present.count
     total = all.count

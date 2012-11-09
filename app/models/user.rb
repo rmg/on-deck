@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :skills
 
   scope :in_domain, ->(domain) { where domain: domain }
+  scope :and_skills, ->() { includes(:skills) }
 
   def present?
     present_until && present_until > Time.now
